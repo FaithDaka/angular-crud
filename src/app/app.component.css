@@ -29,3 +29,29 @@ ul,ol,li{
   justify-content: space-between;
   align-content: center;
 }
+.navbar h2{
+  font-size: 20px;
+  color: #f4f4f4;
+  letter-spacing: 0.5px;
+}
+.navbar img{
+  margin-right: 6px;
+  font-size: 13px;
+  text-transform: lowercase;
+  width: 45px;
+  margin-left: 40px;
+  background-color: crimson;
+  padding:3px;
+}
+
+.table_view tbody tr th{
+  font-size:16px;
+  letter-spacing: 0.4px;
+  padding:15px;
+  text-transform: capitalize;
+}
+.table_view tbody tr th fa-icon{
+  color:crimson;
+  padding: 12px;
+  font-size:18px;
+}

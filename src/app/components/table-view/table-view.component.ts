@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Data } from 'src/app/utils/data';
 
 @Component({
   selector: 'app-table-view',
@@ -7,7 +6,7 @@ import { Data } from 'src/app/utils/data';
   styleUrls: ['./table-view.component.css']
 })
 export class TableViewComponent implements OnInit {
-
+  @Input() title="";
   constructor() { }
 
   ngOnInit(): void {

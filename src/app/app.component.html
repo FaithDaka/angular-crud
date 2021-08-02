@@ -1,18 +1,26 @@
 <div>
   <div class="navbar">
-    <img src="">
-    <h2>{{title}}</h2>
+    <h2>
+      <img src="../assets/logo512.png" alt="logo">
+      {{title}}
+    </h2>
+    <span>
+      <i></i>
+    </span>
   </div>
   <div class="table_view">
-    <app-table-view>
+    <app-table-view title="Company">
       <tbody>
         <tr *ngFor="let x of data">
           <th>{{x.name}}</th>
           <th>{{x.number}}</th>
           <th>{{x.location}}</th>
           <th>
-            <a>
-              <i></i>
+            <a title="Edit">
+              <fa-icon icon="edit"></fa-icon>
+            </a>
+            <a title="Delete" (click) ="handleDelete(x)">
+              <fa-icon icon="trash-alt"></fa-icon>
             </a>
           </th>
         </tr>

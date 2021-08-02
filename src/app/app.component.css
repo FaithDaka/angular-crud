@@ -25,4 +25,7 @@ ul,ol,li{
   background-color: #1752d3;
   height:60px;
   margin-bottom: 80px;
+  display:flex;
+  justify-content: space-between;
+  align-content: center;
 }

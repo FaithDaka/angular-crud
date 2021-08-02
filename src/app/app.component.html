@@ -1,9 +1,23 @@
 <div>
   <div class="navbar">
-    
+    <img src="">
+    <h2>{{title}}</h2>
   </div>
   <div class="table_view">
-    <app-table-view></app-table-view>
+    <app-table-view>
+      <tbody>
+        <tr *ngFor="let x of data">
+          <th>{{x.name}}</th>
+          <th>{{x.number}}</th>
+          <th>{{x.location}}</th>
+          <th>
+            <a>
+              <i></i>
+            </a>
+          </th>
+        </tr>
+      </tbody>
+    </app-table-view>
   </div>
 </div>
 

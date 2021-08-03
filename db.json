@@ -2,21 +2,45 @@
   "data": [
     {
       "id": 1,
-      "name": "Oseon Limited",
+      "name": "Kaka Limited",
       "number": "0773456781",
-      "location": "Kamwokya"
+      "location": "Kampala"
     },
     {
       "id": 2,
-      "name": "Oseon Limited",
+      "name": "Foo Company",
       "number": "0773456781",
-      "location": "Kamwokya"
+      "location": "Kampala"
     },
     {
       "id": 3,
-      "name": "Oseon Limited",
+      "name": "Krystal Water",
       "number": "0773456781",
-      "location": "Kamwokya"
+      "location": "Mukono"
+    },
+    {
+      "id": 4,
+      "name": "Foo Company",
+      "number": "0773456781",
+      "location": "Kampalao"
+    },
+    {
+      "id": 5,
+      "name": "Kaka Limited",
+      "number": "0773456781",
+      "location": "Kampala"
+    },
+    {
+      "id": 7,
+      "name": "Foo Company",
+      "number": "0773456781",
+      "location": "Kampala"
+    },
+    {
+      "id": 8,
+      "name": "Kaka Limited",
+      "number": "0773456781",
+      "location": "Kampala"
     }
   ]
 }

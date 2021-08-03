@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { dataType } from './dataType';
 import { CrudService } from './services/crud-service.service';
 import { ModalComponent } from './components/modal/modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +14,14 @@ export class AppComponent implements OnInit{
   data: dataType[] = [];
   title: string = 'Welcome to Utility';
   closeModal: string ="";
+  loading: boolean = false;
   @ViewChild('modal') private modalComponent!: ModalComponent
   
   async openModal() {
     return await this.modalComponent.open()
   }
 
-  constructor(private crudServices: CrudService){ }
+  constructor(private crudServices: CrudService, private router:Router){ }
 
   ngOnInit(): void {
     this.crudServices.getData()
@@ -34,11 +36,14 @@ export class AppComponent implements OnInit{
   }
 
   handleDelete(data: dataType){
+    this.loading = true;
     this.crudServices.handleDelete(data)
     .subscribe(() => (this.data = this.data.filter((x)=> x.id !== data.id) ));
   }
 
-  
+  hasRoute(route:string){
+    return this.router.url === route;
+  }
 
   //   openModal(){
   //   this.modalService.open(AddCompanyComponent, {ariaLabelledBy:'modal-basic-title'})

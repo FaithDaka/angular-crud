@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { dataType } from './dataType';
 import { CrudService } from './services/crud-service.service';
-import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './components/modal/modal.component';
 
 @Component({
@@ -25,6 +24,13 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.crudServices.getData()
     .subscribe((list) => (this.data = list ));
+  }
+
+  addCompany(object: dataType){
+    console.log(object);
+
+    this.crudServices.addData(object)
+    .subscribe((obj) => (this.data.push() ));
   }
 
   handleDelete(data: dataType){

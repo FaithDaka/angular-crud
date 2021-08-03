@@ -16,7 +16,6 @@ export class ModalComponent implements OnInit {
   constructor( private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    console.log('Im triggered')
   }
 
   open() {

@@ -14,7 +14,7 @@
     </h2>
   </div>
   <app-modal #modal title="add new company">
-    <app-add-item></app-add-item>
+    <app-add-item (addCompany)="addCompany($event)"></app-add-item>
   </app-modal>
   <div class="table_view">
     <app-table-view title="company"

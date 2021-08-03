@@ -1,21 +1,42 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { dataType } from 'src/app/dataType';
+import { CrudService } from 'src/app/services/crud-service.service';
 
 @Component({
   selector: 'app-add-item',
   templateUrl: './add-item.component.html',
   styleUrls: ['./add-item.component.css']
 })
+
 export class AddItemComponent implements OnInit {
-  @Input() title ="";
+  data: dataType[] = [];
   name= "";
   number="";
   location="";
+  @Output() addCompany: EventEmitter<dataType> = new EventEmitter()
+  @Input() title ="";
 
-
-  constructor() { }
+  constructor(private crudServices: CrudService) { }
 
   ngOnInit(): void {
-    console.log("im open")
+    this.crudServices.getData()
+    .subscribe((list) => (this.data = list ));
   }
 
+  onSubmit(){
+    console.log('on submit')
+
+    const newCompany = {
+      id: this.data.length++,
+      name: this.name,
+      number: this.number,
+      location : this.location
+    }
+
+    this.addCompany.emit(newCompany);
+
+    this.name = '';
+    this.number = '';
+    this.location = '';
+  }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http'
-import { Observable } from 'rxjs';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http'
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { dataType } from '../dataType';
 
 @Injectable({
@@ -17,9 +18,26 @@ export class CrudService {
     return this.http.get<dataType[]>(this.apiUrl);
   }
 
+  addData(data: dataType): Observable<dataType[]>{
+    return this.http.post<dataType[]>(this.apiUrl, data, {headers: this.headers})
+    .pipe(
+      catchError(this.error)
+      )
+  }
+
   handleDelete(data: dataType): Observable<dataType>{
     const url = `${this.apiUrl}/${data.id}`;
     return this.http.delete<dataType>(url);
+  }
 
+  error(error: HttpErrorResponse) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
+    } else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
   }
 }

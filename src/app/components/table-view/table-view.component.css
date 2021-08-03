@@ -18,6 +18,7 @@
 ._table .t_header span fa-icon{
     font-size: 25px;
     color: crimson;
+    cursor: pointer;
 }
 ._table thead tr th{
     text-transform: uppercase;

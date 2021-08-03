@@ -9,15 +9,12 @@ import { dataType } from '../dataType';
 
 export class CrudService {
   private apiUrl: string = 'http://localhost:5000/data';
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http:HttpClient){}
 
   getData(): Observable<dataType[]>{
     return this.http.get<dataType[]>(this.apiUrl);
-  }
-
-  addData(){
-
   }
 
   handleDelete(data: dataType): Observable<dataType>{

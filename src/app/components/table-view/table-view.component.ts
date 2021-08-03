@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-table-view',
@@ -7,9 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TableViewComponent implements OnInit {
   @Input() title="";
+  @Input() content = "";
+  @Output() addItem = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
+  onClick(){
+    this.addItem.emit();
+  }
 }

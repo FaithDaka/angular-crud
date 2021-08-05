@@ -1,0 +1,26 @@
+<ng-template>
+  <div class="card update-card">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Name:</label>
+          <input class="form-control" type="text" name="name" [(ngModel)]="name" id="name" placeholder="Enter company name" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number:</label>
+          <input class="form-control" type="text" name="number" [(ngModel)]="number" id="number"
+            placeholder="07xxxxxxxx" />
+        </div>
+        <div class="form-group">
+          <label>Location:</label>
+          <input class="form-control" type="text" name="location" [(ngModel)]="location" id="location"
+            placeholder="city of operation" />
+        </div>
+        <div class="card-footer">
+          <input type="submit" className="btn btn-secondary" value="Update">
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>
+

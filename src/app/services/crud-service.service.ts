@@ -10,7 +10,11 @@ import { dataType } from '../dataType';
 
 export class CrudService {
   private apiUrl: string = 'http://localhost:5000/data';
-  headers = new HttpHeaders().set('Content-Type', 'application/json');
+  private header ={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
 
   constructor(private http:HttpClient){}
 
@@ -19,10 +23,18 @@ export class CrudService {
   }
 
   addData(data: dataType): Observable<dataType[]>{
-    return this.http.post<dataType[]>(this.apiUrl, data, {headers: this.headers})
+    return this.http.post<dataType[]>(this.apiUrl, data, this.header)
     .pipe(
       catchError(this.error)
       )
+  }
+
+  updateData(id:number, data:dataType): Observable<dataType[]> {
+    let API_URL = `${this.apiUrl}/${id}`;
+    return this.http.put<dataType[]>(API_URL, data, this.header)
+    .pipe(
+      catchError(this.error)
+    )
   }
 
   handleDelete(data: dataType): Observable<dataType>{

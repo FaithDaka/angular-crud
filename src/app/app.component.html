@@ -14,10 +14,10 @@
     </h2>
   </div>
   <router-outlet></router-outlet>
-  <app-modal #modal title="add new company">
+  <app-modal #modal title="Add New Company">
     <app-add-item (addCompany)="addCompany($event)"></app-add-item>
   </app-modal>
-  <div class="table_view" *ngIf = "hasRoute('/')">
+  <div class="table_view">
     <app-table-view title="company"
     (addItem) = "openModal()">
       <tbody>
@@ -26,7 +26,7 @@
           <th>{{x.number}}</th>
           <th>{{x.location}}</th>
           <th>
-            <a title="Edit">
+            <a title="Edit" [routerLink]="['/update', x.id]">
               <fa-icon icon="edit"></fa-icon>
             </a>
             <a title="Delete" (click) ="handleDelete(x)">

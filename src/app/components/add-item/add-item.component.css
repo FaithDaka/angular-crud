@@ -1,4 +1,38 @@
 .card{
-    height:100px;
-    background-color: crimson;
+    height:auto;
+    background-color: #ddd;
+}
+.card .card-body{
+    border-left:2px solid crimson;
+}
+.card .form-group{
+    padding:10px;
+    margin-top: 8px;
+}
+.card .form-group input{
+    margin-left:5%;
+    font-size:20px;
+    letter-spacing:0.3px;
+}
+.addcard .form-group input{
+    width:70%;
+}
+.addcard .form-group label{
+    color:#1752d3;
+    font-size:20px;
+    text-transform: capitalize;
+    margin-left:2%;
+    font-weight: 600;
+}
+.addcard .modal-footer{
+    margin-top:20px;
+}
+.addcard .modal-footer input{
+    color:#fff;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 3px 6px;
+    background-color: #0080ff;
+    border-color: #0080ff;
+    box-shadow: none;
 }

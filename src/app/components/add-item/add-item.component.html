@@ -1,30 +1,23 @@
-<div class="card">
-    <div class="card-header">
-        <h2>Add new company</h2>
-    </div>
-    <div class="card-body">
-        <form (ngSubmit) ="onSubmit()">
-            <div class="form-group">
-                <div class="form-control">
-                    <label>Name</label>
-                    <input type="text" name="name" [(ngModel)]="name" id="name"
-                    placeholder="Add name"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form-control">
-                    <label>Phone Number</label>
-                    <input type="text" name="number" [(ngModel)]="number" id="number"
-                    placeholder="07xxxxxxxx"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form-control">
-                    <label>Name</label>
-                    <input type="text" name="location" [(ngModel)]="location" id="location"
-                    placeholder="city of operation"/>
-                </div>
-            </div>
-        </form>
-    </div>
+<div class="card addcard">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Name:</label>
+        <input class="form-control" type="text" name="name" [(ngModel)]="name" id="name" placeholder="Enter company name" />
+      </div>
+      <div class="form-group">
+        <label>Phone Number:</label>
+        <input class="form-control" type="text" name="number" [(ngModel)]="number" id="number"
+          placeholder="07xxxxxxxx" />
+      </div>
+      <div class="form-group">
+        <label>Location:</label>
+        <input class="form-control" type="text" name="location" [(ngModel)]="location" id="location"
+          placeholder="city of operation" />
+      </div>
+      <div class="modal-footer">
+        <input type="submit" className="btn btn-secondary" value="Save">
+      </div>
+    </form>
+  </div>
 </div>

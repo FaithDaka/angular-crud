@@ -20,7 +20,7 @@ export class ModalComponent implements OnInit {
 
   open() {
     this.modalRef = this.modalService.open(this.modalContent, {ariaLabelledBy:'modal-basic-title'})
-    this.modalRef.result.then();
+    this.modalRef.componentInstance.name = "Add"
   }
 
   close() {

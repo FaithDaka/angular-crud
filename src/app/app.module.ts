@@ -14,8 +14,10 @@ import { TableViewComponent } from './components/table-view/table-view.component
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { RouteComponent } from './pages/route/route.component';
+import { UpdateItemComponent } from './components/update-item/update-item.component';
 
 const appRoutes: Routes = [
+  {path:'update/:id', component: UpdateItemComponent},
   {path:'route', component: RouteComponent}
 ]
 
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     TableViewComponent,
     AddItemComponent,
     ModalComponent,
-    RouteComponent
+    RouteComponent,
+    UpdateItemComponent
   ],
   imports: [
     BrowserModule,

@@ -24,8 +24,10 @@ export class AddItemComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log('on submit')
-
+    if(!this.name || !this.number || !this.location){
+      alert('All fields are required.')
+      return;
+    }
     const newCompany = {
       id: this.data.length++,
       name: this.name,

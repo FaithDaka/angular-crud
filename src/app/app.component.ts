@@ -32,7 +32,12 @@ export class AppComponent implements OnInit{
     console.log(object);
 
     this.crudServices.addData(object)
-    .subscribe((obj) => (this.data.push() ));
+    .subscribe(
+      (object)=> {
+        console.log('This is the object:', object)
+      }
+    );
+    this.data.push(object);
   }
 
   handleDelete(data: dataType){
